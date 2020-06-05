@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="/dist/app.css{% if dev %}?nocache={{ nocachestr }}{% endif %}" />
+        <title>{% block title %}{% endblock %} - ZBDNS </title>
+        {% endblock %}
+    </head>
+    <body class="bg-gray-300 text-gray-700">
+        <div id="app" class="md:flex md:justify-center">
+            {% block content %}{% endblock %}
+        </div>
+        <script src="/dist/app.js{% if dev %}?nocache={{ nocachestr }}{% endif %}"></script>
+    </body>
+</html>

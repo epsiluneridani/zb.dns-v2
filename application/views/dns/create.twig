@@ -1,0 +1,35 @@
+{% extends "layout/app.twig" %}
+
+{% block title %}Add Record{% endblock %}
+
+{% block content %}
+<div class="px-2 text-gray-800 md:flex md:flex-col md:w-2/3 lg:w-1/3">
+    <div class="text-center py-8">
+        <h1 class="font-semibold text-5xl">ZB.DNS</h1>
+        <p class="py-1">Create an easy to remember <br/>hostname for your ip address.</p>
+    </div>
+    <form action="/" method="POST" @submit.prevent="formSubmit" class="border bg-gray-100 rounded px-4 py-3 shadow-md">
+        <div class="block mb-2">
+            <label class="block py-2 font-semibold text-sm">HOSTNAME</label>
+            <input type="text" class="px-2 py-2 w-full border" placeholder="my-awesome-hostname" v-model="dnsform.name"/>
+        </div>
+        <div class="block mb-2">
+            <label class="block py-2 font-semibold text-sm">IP ADDRESS</label>
+            <input type="text" class="px-2 py-2 w-full border" placeholder="127.0.0.1"/>
+        </div>
+        <div class="block mb-2">
+            <label class="block py-2 font-semibold text-sm">DOMAIN</label>
+            <select class="px-2 py-2 w-full border" value="dns.hostlibre.cf">
+                <option value="dns.hostlibre.cf">dns.hostlibre.cf</option>
+                <option value="random.hostlibre.cf">random.hostlibre.cf</option>
+            </select>
+        </div>
+        <div class="block mb-3 py-2">
+            <button type="submit" class="w-full px-2 py-3 bg-indigo-500 text-white rounded">SUBMIT</button>
+        </div>
+    </form>
+    <div class="text-center py-2">
+        Created by ZBYTE
+    </div>
+</div>
+{% endblock %}
